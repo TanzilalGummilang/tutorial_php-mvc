@@ -1,0 +1,28 @@
+(*) eps01
+mvc :
+- pola arsitektur pd perancangan perangkat lunak berorientasi objek
+- bisa digunakan dibahasa lain selain php selama dia memiliki konsep oop
+- utk memisahkan antara tampilan, data dan proses
+
+alasan penerapan:
+- organisasi dan struktur kode yg baik
+- memisahkan logic dan tampilan
+- perawatan kode (memudahkan maintenance)
+- implementasi konsep oop yg sudah dipelajari di seri sebelumnya
+- digunakan oleh banyak web application framework
+
+(*) eps02 periapan
+- folder public : menyimpan file yg bisa diakses oleh user. co: file index, css, js, gambar
+- folder app : menyimpan folder/file utama dari aplikasi mvc. co: 
+-- folder core : misalnya bagaimana cara membuat file yg mengelola routing.
+-- folder controllers.
+-- folder views : antarmuka yg disajikan oleh controllers.
+-- folder models.
+- bootstrapping = teknik memanggil satu file yg juga file tsb memanggil seluruh app mvc nya (pake file init.php)
+
+
+(*) eps03 routing
+- pretty url : mengelola url atau membuat url jadi rapi, sehingga akan memanggil controller default (home) jika setelah url utama tidak ada dituliskan apapun atau tidak ditemukannya method yg ditulis di url.
+- parsing
+- file htaccess : memodifikasi konfigurasi dari server apache kita (bisa per folder). dlm kasus ini kita memblokir akses folder app terhadap user karena user tidak boleh mengakses folder app.
+
