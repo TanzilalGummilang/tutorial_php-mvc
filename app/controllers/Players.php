@@ -11,6 +11,16 @@ class Players extends Controller
     $this->view('players/index', $data);
     $this->view('templates/footer');
   }
+
+  public function detail($playerCode)
+  {
+    $data['title'] = 'Detail Pemain';
+    $data['players'] = $this->model('Players_model')->getPlayerByCode($playerCode);
+
+    $this->view('templates/header', $data);
+    $this->view('players/detail', $data);
+    $this->view('templates/footer');
+  }
 }
 
 ?>
