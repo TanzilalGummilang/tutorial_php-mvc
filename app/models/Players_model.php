@@ -23,6 +23,23 @@ class Players_model
     return $this->db->singleSet();
   }
 
+  public function insertPlayerData($data)
+  {
+    $query = 
+      "INSERT INTO players_table VALUES
+      (:player_code, :player_name, '', :player_number, :position, '', '', '', '', '', '', '')";
+
+    $this->db->query($query);
+    $this->db->bind('player_code', $data['player-code']);
+    $this->db->bind('player_name', $data['player-name']);
+    $this->db->bind('player_number', $data['player-number']);
+    $this->db->bind('position', $data['position']);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
+
 }
 
 ?>
